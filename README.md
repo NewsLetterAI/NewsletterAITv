@@ -24,3 +24,9 @@ Il sito vecchio non viene modificato.
 - rimossa la sezione metodologica interna
 - menu a tendina per navigare tra le 30 specialità
 - ricerca per titolo, PMID o specialità mantenuta
+
+
+## V3
+- Etichetta specialità più grande.
+- Card editoriali per gli articoli, senza score pubblico.
+- Ricerca per argomento con filtro per specialità e sinonimi IT/EN.
