@@ -16,3 +16,11 @@ Il sito vecchio non viene modificato.
 - `2026-07/index.html`: numero di luglio
 - `styles.css`: grafica responsive
 - `data.json`: dati strutturati dei 300 record
+
+
+## V2
+- rimossi i punteggi V5.1 dalla visualizzazione pubblica
+- rimossa la nota sui 299 articoli unici
+- rimossa la sezione metodologica interna
+- menu a tendina per navigare tra le 30 specialità
+- ricerca per titolo, PMID o specialità mantenuta
