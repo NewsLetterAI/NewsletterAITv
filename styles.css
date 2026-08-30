@@ -542,3 +542,17 @@
   .issue-page .search-wrap{padding-top:38px}
   .issue-page .section h2{font-size:25px}
 }
+
+
+/* V9 — micro-ritocchi richiesti: linea continua, metadata pulita, top 3 più visibili. */
+.issue-page .pulse-line span{display:none!important}
+.issue-page .top10-container .results-list .top-result:nth-child(-n+3) .result-rank span{
+  font-size:18px;
+  line-height:1;
+  font-weight:700;
+  color:var(--editorial-teal-dark);
+  padding-top:0;
+}
+@media(max-width:800px){
+  .issue-page .top10-container .results-list .top-result:nth-child(-n+3) .result-rank span{font-size:17px}
+}
