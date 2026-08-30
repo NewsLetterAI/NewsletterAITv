@@ -255,3 +255,290 @@
   .result-title{font-size:16px!important}
   .result-authors,.result-citation,.result-identifiers,.result-identifiers a,.result-abstract{font-size:12.25px!important}
 }
+
+/* V8 — cornice editoriale scura/avorio ispirata al mockup fornito.
+   Le regole .pub-result/.result-* della V7 restano volutamente invariate. */
+.issue-page{
+  --editorial-navy:#0b1b26;
+  --editorial-navy-2:#102733;
+  --editorial-cream:#f4f1e8;
+  --editorial-paper:#fffdf8;
+  --editorial-teal:#58c2b6;
+  --editorial-teal-dark:#2f756f;
+  --editorial-line:#d8d2c5;
+  --editorial-soft:#a9b2b7;
+  --editorial-ink:#14232d;
+  background:var(--editorial-cream);
+  color:var(--editorial-ink);
+}
+.issue-page .issue-topbar{
+  position:relative;
+  top:auto;
+  z-index:1;
+  background:var(--editorial-navy);
+  backdrop-filter:none;
+  border-bottom:0;
+  color:#f2eee4;
+}
+.issue-page .issue-topbar .wrap{
+  width:min(1080px,calc(100% - 64px));
+  height:74px;
+  border-bottom:1px solid #28414c;
+}
+.issue-page .issue-topbar .brand{
+  color:#f2eee4;
+  text-decoration:none;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.13em;
+}
+.issue-page .issue-topbar .brand span{color:#81929b;font-weight:500}
+.issue-page .issue-meta{
+  color:#748893;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:11px;
+  letter-spacing:.04em;
+  white-space:nowrap;
+}
+.issue-page .hero{
+  padding:48px 0 0;
+  background:linear-gradient(118deg,var(--editorial-navy) 0%,#0d202c 66%,#102834 100%);
+  color:#f6f0e5;
+}
+.issue-page .hero .wrap{width:min(1080px,calc(100% - 64px))}
+.issue-page .hero-kicker{
+  margin:0 0 18px;
+  color:var(--editorial-teal);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:17px;
+  font-style:italic;
+}
+.issue-page .hero h1{
+  max-width:650px;
+  margin:0 0 22px;
+  color:#f6f0e5;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(46px,5.3vw,68px);
+  font-weight:700;
+  line-height:.99;
+  letter-spacing:-.035em;
+}
+.issue-page .hero p{
+  max-width:590px;
+  margin:0;
+  color:#b2bcc1;
+  font-size:17px;
+  line-height:1.55;
+}
+.issue-page .stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  margin:52px 0 28px;
+}
+.issue-page .stat{
+  min-height:106px;
+  padding:8px 24px 8px 0;
+  background:transparent;
+  border:0;
+  border-right:1px solid #294450;
+  border-radius:0;
+  box-shadow:none;
+}
+.issue-page .stat:not(:first-child){padding-left:25px}
+.issue-page .stat:last-child{border-right:0}
+.issue-page .stat b{
+  display:block;
+  color:var(--editorial-teal);
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:34px;
+  font-weight:500;
+  letter-spacing:.015em;
+}
+.issue-page .stat span{
+  color:#80919a;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:10.5px;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.issue-page .pulse-line{
+  position:relative;
+  height:62px;
+  overflow:hidden;
+}
+.issue-page .pulse-line:before{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:31px;
+  height:1px;
+  background:var(--editorial-teal);
+  opacity:.9;
+}
+.issue-page .pulse-line span{
+  position:absolute;
+  left:23%;top:16px;
+  width:28px;height:31px;
+  background:var(--editorial-navy);
+}
+.issue-page .pulse-line span:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-left:1.5px solid var(--editorial-teal);
+  border-bottom:1.5px solid var(--editorial-teal);
+  transform:skewX(-15deg) rotate(-56deg) scale(.72,1.35);
+}
+.issue-page .search-wrap{
+  width:min(1080px,calc(100% - 64px));
+  margin:0 auto;
+  padding:64px 0 22px;
+}
+.issue-page #indice{
+  margin:0;
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.issue-page .specialty-jump{
+  display:grid;
+  grid-template-columns:minmax(220px,300px) minmax(320px,1fr);
+  grid-template-areas:"copy select";
+  align-items:end;
+  gap:24px;
+  margin:0 0 16px;
+  padding:20px 24px;
+  background:var(--editorial-paper);
+  border:1px solid var(--editorial-line);
+}
+.issue-page .specialty-jump .eyebrow,
+.issue-page .topic-finder .eyebrow{
+  color:var(--editorial-teal-dark);
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:10px;
+  letter-spacing:.12em;
+}
+.issue-page .specialty-jump h3{
+  margin:4px 0 2px;
+  color:var(--editorial-ink);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:22px;
+  font-weight:700;
+}
+.issue-page .specialty-jump p{margin:0;color:#7c8589;font-size:12px}
+.issue-page .specialty-jump-select{
+  grid-area:select;
+  width:100%;
+  min-height:48px;
+  border:1px solid #d7d0c2;
+  border-radius:0;
+  background:#faf8f2;
+  color:#25323a;
+  padding:0 42px 0 13px;
+  font:500 14px Arial,Helvetica,sans-serif;
+}
+.issue-page .topic-finder{
+  margin:0;
+  padding:20px 24px;
+  background:var(--editorial-paper);
+  border:1px solid var(--editorial-line);
+  border-radius:0;
+}
+.issue-page .topic-finder-head h3{
+  margin:3px 0 2px;
+  color:var(--editorial-ink);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:-.015em;
+}
+.issue-page .topic-finder-head p{margin:0;color:#7c8589;font-size:12px}
+.issue-page .topic-controls{
+  grid-template-columns:190px minmax(0,1fr) auto;
+  gap:10px;
+  margin-top:15px;
+}
+.issue-page .topic-select,
+.issue-page .topic-search,
+.issue-page .clear-topic{
+  min-height:46px;
+  border:1px solid #d7d0c2;
+  border-radius:0;
+  background:#faf8f2;
+  color:#26333a;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:13px;
+}
+.issue-page .topic-search{padding-left:39px}
+.issue-page .topic-search-icon{color:var(--editorial-teal-dark);font-size:18px}
+.issue-page .clear-topic{padding:0 16px;font-weight:600;cursor:pointer}
+.issue-page .clear-topic:hover{background:#f1eee5;border-color:#bfb6a6}
+.issue-page .topic-result{margin-top:8px;color:#8a908f;font-size:11.5px;font-weight:500}
+.issue-page .top10-container{
+  width:min(900px,calc(100% - 48px));
+  margin:18px auto 0;
+}
+.issue-page .section{padding-top:38px}
+.issue-page .section-head{
+  position:relative;
+  margin:0 0 9px;
+  padding:0 0 9px 23px;
+  border-bottom:1px solid #d9d2c6;
+}
+.issue-page .section-head:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:18px;
+  width:10px;height:10px;
+  border-radius:50%;
+  background:var(--editorial-teal-dark);
+}
+.issue-page .section h2{
+  color:var(--editorial-ink);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:-.02em;
+}
+.issue-page .section-head .eyebrow{
+  color:#c08942;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:9.5px;
+  letter-spacing:.12em;
+}
+.issue-page .section-head a{
+  color:#918b7f;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+/* L'elenco PubMed-like resta deliberatamente quello della V7. */
+.issue-page .footer{color:#8b8b83}
+
+@media(max-width:800px){
+  .issue-page .issue-topbar .wrap,.issue-page .hero .wrap,.issue-page .search-wrap{width:min(100% - 28px,1080px)}
+  .issue-page .issue-meta{display:none}
+  .issue-page .hero{padding-top:38px}
+  .issue-page .hero h1{font-size:clamp(42px,11vw,58px)}
+  .issue-page .stats{grid-template-columns:1fr 1fr;margin-top:38px}
+  .issue-page .stat{border-right:0;border-bottom:1px solid #294450;padding:13px 14px 13px 0;min-height:88px}
+  .issue-page .stat:nth-child(odd){border-right:1px solid #294450}
+  .issue-page .stat:not(:first-child){padding-left:14px}
+  .issue-page .specialty-jump{grid-template-columns:1fr;grid-template-areas:"copy" "select";gap:13px;padding:18px}
+  .issue-page .topic-finder{padding:18px}
+  .issue-page .topic-controls{grid-template-columns:1fr}
+  .issue-page .top10-container{width:min(100% - 28px,900px)}
+}
+@media(max-width:480px){
+  .issue-page .hero h1 br{display:none}
+  .issue-page .hero p{font-size:15px}
+  .issue-page .stat b{font-size:27px}
+  .issue-page .search-wrap{padding-top:38px}
+  .issue-page .section h2{font-size:25px}
+}
