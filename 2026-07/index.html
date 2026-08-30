@@ -3127,7 +3127,7 @@ function escapeHtml(s){return (s||'').toString().replace(/[&<>"']/g,c=>({'&':'&a
 function shortAbstract(s,n=560){const t=(s||'').replace(/\s+/g,' ').trim();if(t.length<=n)return t;let cut=t.slice(0,n);const p=Math.max(cut.lastIndexOf('. '),cut.lastIndexOf('; '));if(p>n*.62)cut=cut.slice(0,p+1);else cut=cut.replace(/[ ,;:.]+$/,'')+'…';return cut;}
 function formatAuthors(s){return (s||'').split(';').map(x=>x.trim()).filter(Boolean).join(', ');}
 function citation(item){return [item.journal,item.date,item.publication_type].filter(Boolean).join(' · ');}
-function resultHtml(item,i){const top=item.top10_specialties||[];let badges='<span class="result-badge corpus-badge">CORPUS MESE</span>';if(top.length)badges+=top.map(x=>`<span class="result-badge top-badge">TOP 10 · ${escapeHtml(x.specialty)} #${x.rank}</span>`).join('');const abst=shortAbstract(item.abstract);return `<article class="pub-result corpus-result"><div class="result-rank search-rank"><span>${i+1}</span></div><div class="result-content"><div class="result-badges">${badges}</div><h3 class="result-title"><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(item.pmid)}/" target="_blank" rel="noopener">${escapeHtml(item.title)}</a></h3>${item.authors?`<p class="result-authors">${escapeHtml(formatAuthors(item.authors))}</p>`:''}${citation(item)?`<p class="result-citation">${escapeHtml(citation(item))}</p>`:''}<div class="result-identifiers"><span>PMID: ${escapeHtml(item.pmid)}</span>${item.doi?`<span>DOI: ${escapeHtml(item.doi)}</span>`:''}<a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(item.pmid)}/" target="_blank" rel="noopener">PubMed ↗</a></div>${abst?`<p class="result-abstract">${escapeHtml(abst)}</p>`:''}</div></article>`;}
+function resultHtml(item,i){const top=item.top10_specialties||[];const abst=shortAbstract(item.abstract,420);const label=top.length?`<div class="editor-pick-label corpus-topline">TOP 10 · ${escapeHtml(top[0].specialty)} · #${escapeHtml(top[0].rank)}</div>`:`<div class="editor-pick-label corpus-topline">CORPUS DEL MESE</div>`;return `<article class="pub-result corpus-result"><div class="result-rank search-rank"><span>${i+1}</span></div><div class="result-content">${label}<h3 class="result-title"><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(item.pmid)}/" target="_blank" rel="noopener">${escapeHtml(item.title)}</a></h3>${citation(item)?`<p class="result-citation">${escapeHtml(citation(item))}</p>`:''}${item.authors?`<p class="result-authors">${escapeHtml(formatAuthors(item.authors))}</p>`:''}${abst?`<p class="result-abstract">${escapeHtml(abst)}</p>`:''}<div class="result-identifiers"><span>PMID ${escapeHtml(item.pmid)}</span>${item.doi?`<span>DOI ${escapeHtml(item.doi)}</span>`:''}<a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(item.pmid)}/" target="_blank" rel="noopener">Apri su PubMed →</a></div></div></article>`;}
 function renderResults(items,total){const max=50, shown=items.slice(0,max);corpusResults.innerHTML=shown.map(resultHtml).join('')+(total>max?`<div class="corpus-more">Mostrati i primi ${max} di ${total.toLocaleString('it-IT')} risultati. Restringi la ricerca per trovare più rapidamente ciò che ti interessa.</div>`:'');corpusResults.classList.toggle('hidden',total===0);top10Container.classList.toggle('hidden',total>0 || topicSearch.value.trim() || topicSpecialty.value);}
 function applyCorpusSearch(){const q=topicSearch.value.trim(),scope=topicSpecialty.value;if(!q&&!scope){corpusResults.classList.add('hidden');top10Container.classList.remove('hidden');topicResult.textContent='Scrivi un argomento oppure scegli una specialità.';return;}if(!corpusReady){topicResult.textContent='Sto caricando l’archivio mensile…';return;}const scored=[];for(const item of corpus){if(!specialtyMatches(item,scope))continue;const score=q?topicMatchScore(item,q):1;if(score>0)scored.push({item,score});}scored.sort((a,b)=>b.score-a.score||Number(b.item.top10)-Number(a.item.top10)||a.item.title.localeCompare(b.item.title));const matches=scored.map(x=>x.item);renderResults(matches,matches.length);topicResult.textContent=matches.length?`${matches.length.toLocaleString('it-IT')} ${matches.length===1?'articolo trovato':'articoli trovati'} nel corpus AI-medico di luglio.`:'Nessun risultato. Prova con termini più generali o con un solo concetto.';}
 fetch('../search-index.json').then(r=>{if(!r.ok)throw new Error('index');return r.json();}).then(data=>{corpus=data;corpusReady=true;applyCorpusSearch();}).catch(()=>{topicResult.textContent='Non riesco a caricare l’indice di ricerca. Ricarica la pagina tra poco.';});
@@ -3136,4 +3136,43 @@ topicSearch.addEventListener('input',applyCorpusSearch);topicSpecialty.addEventL
 <script>
 (function(){const el=document.getElementById('top10SpecialtyJump');if(!el)return;el.addEventListener('change',function(){if(!this.value)return;const target=document.getElementById(this.value);if(target){target.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+this.value);}this.selectedIndex=0;});})();
 </script>
+
+<script>
+(function(){
+  const ROMANS={1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI',7:'VII',8:'VIII',9:'IX',10:'X'};
+  function enhanceTopResults(){
+    document.querySelectorAll('.specialty-section .top-result').forEach((article, idx) => {
+      const rankEl = article.querySelector('.result-rank span');
+      if(rankEl){
+        const m = rankEl.textContent.match(/(\d+)/);
+        const n = m ? Number(m[1]) : (idx+1);
+        rankEl.textContent = ROMANS[n] || String(n);
+      }
+      const content = article.querySelector('.result-content');
+      if(content && !content.querySelector('.editor-pick-label')){
+        const rankText = rankEl ? rankEl.textContent.trim() : '';
+        const label = document.createElement('div');
+        label.className = 'editor-pick-label';
+        label.textContent = (rankText === 'I' || rankText === 'II') ? "EDITOR'S PICK" : 'TOP 10 DEL MESE';
+        content.insertBefore(label, content.firstChild);
+      }
+      const abs = article.querySelector('.result-abstract');
+      if(abs && abs.textContent.trim().length > 220 && !content.querySelector('.abstract-toggle')){
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'abstract-toggle';
+        btn.textContent = 'Leggi tutto →';
+        btn.addEventListener('click', () => {
+          article.classList.toggle('expanded');
+          btn.textContent = article.classList.contains('expanded') ? 'Mostra meno ←' : 'Leggi tutto →';
+        });
+        content.insertBefore(btn, article.querySelector('.result-identifiers'));
+      }
+    });
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', enhanceTopResults);
+  else enhanceTopResults();
+})();
+</script>
+
 </body></html>

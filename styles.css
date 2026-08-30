@@ -556,3 +556,169 @@
 @media(max-width:800px){
   .issue-page .top10-container .results-list .top-result:nth-child(-n+3) .result-rank span{font-size:17px}
 }
+
+
+/* V10 — elenco articoli in stile editoriale sobrio, con dettagli PubMed-like */
+.issue-page .top10-container{width:min(1180px,calc(100% - 56px));margin:14px auto 0}
+.issue-page .results-list{display:block}
+.issue-page .pub-result{
+  display:grid;
+  grid-template-columns:72px minmax(0,1fr);
+  gap:18px;
+  padding:32px 0 34px;
+  border-bottom:1px solid #d8d0c2;
+  background:transparent;
+  box-shadow:none;
+  border-radius:0;
+}
+.issue-page .pub-result:first-child{padding-top:18px}
+.issue-page .result-rank{
+  padding-top:2px;
+  text-align:left;
+}
+.issue-page .result-rank span,
+.issue-page .top10-container .results-list .top-result:nth-child(-n+3) .result-rank span,
+.issue-page .search-rank span{
+  display:block;
+  min-width:0;
+  height:auto;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:28px;
+  line-height:1;
+  color:#b68535;
+}
+.issue-page .top10-container .results-list .top-result:nth-child(-n+3) .result-rank span{font-size:31px}
+.issue-page .result-content{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+}
+.issue-page .result-badges{display:none!important}
+.issue-page .editor-pick-label{
+  order:1;
+  margin:0 0 10px;
+  color:#c28a3a;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:11px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.issue-page .result-title{
+  order:2;
+  margin:0 0 10px!important;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:30px!important;
+  line-height:1.24!important;
+  letter-spacing:-.02em!important;
+  font-weight:700!important;
+}
+.issue-page .result-title a{color:#182635;text-decoration:none}
+.issue-page .result-title a:hover{color:#193746;text-decoration:none}
+.issue-page .result-citation{
+  order:3;
+  margin:0 0 10px;
+  color:#2f6e65;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:13px!important;
+  line-height:1.35!important;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.issue-page .result-authors{
+  order:4;
+  margin:0 0 14px;
+  color:#657487;
+  font-size:16px!important;
+  line-height:1.48!important;
+}
+.issue-page .result-abstract{
+  order:5;
+  margin:0;
+  color:#354556;
+  font-size:15px!important;
+  line-height:1.62!important;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:4;
+  overflow:hidden;
+  max-width:960px;
+}
+.issue-page .top-result.expanded .result-abstract{-webkit-line-clamp:unset;display:block}
+.issue-page .abstract-toggle{
+  order:6;
+  margin:16px 0 0;
+  padding:0;
+  border:0;
+  background:none;
+  color:#2c6b5f;
+  font-family:inherit;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  text-align:left;
+}
+.issue-page .result-identifiers{
+  order:7;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin:20px 0 0;
+  color:inherit;
+  font-size:12px!important;
+}
+.issue-page .result-identifiers span{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:0 14px;
+  border:1px solid #d8d0c2;
+  background:#faf7f0;
+  color:#777164!important;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:12px!important;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.issue-page .result-identifiers a{
+  margin-left:auto;
+  color:#2c6b5f;
+  font-size:16px!important;
+  font-weight:700;
+  text-decoration:none;
+}
+.issue-page .result-identifiers a:hover{text-decoration:underline}
+.issue-page .corpus-results{width:min(1180px,calc(100% - 56px));margin:10px auto 0}
+.issue-page .corpus-result .editor-pick-label{color:#a79062}
+.issue-page .corpus-result .result-title{font-size:27px!important}
+.issue-page .corpus-result .result-rank span,
+.issue-page .search-rank span{font-style:normal;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:16px;color:#8d8b82}
+.issue-page .corpus-result .result-abstract{-webkit-line-clamp:3}
+.issue-page .corpus-result .result-identifiers a{font-size:15px!important}
+.issue-page .corpus-result .result-citation{margin-bottom:8px}
+.issue-page .section-head{margin:0 0 10px;padding:0 0 10px 24px;border-bottom:1px solid #d8d0c2;align-items:end}
+.issue-page .section-head a{font-size:12px;color:#8a8378}
+.issue-page .section h2{font-size:36px}
+.issue-page .corpus-more{width:min(1180px,calc(100% - 56px));margin:14px auto 0;color:#7d7a72;font-size:13px}
+@media(max-width:980px){
+  .issue-page .top10-container,.issue-page .corpus-results{width:min(100% - 34px,1180px)}
+  .issue-page .pub-result{grid-template-columns:58px minmax(0,1fr);gap:14px;padding:26px 0}
+  .issue-page .result-title{font-size:24px!important}
+  .issue-page .corpus-result .result-title{font-size:22px!important}
+}
+@media(max-width:640px){
+  .issue-page .pub-result{grid-template-columns:44px minmax(0,1fr);gap:12px;padding:22px 0}
+  .issue-page .result-rank span,.issue-page .top10-container .results-list .top-result:nth-child(-n+3) .result-rank span{font-size:22px}
+  .issue-page .result-title{font-size:19px!important;line-height:1.3!important}
+  .issue-page .result-citation,.issue-page .result-authors,.issue-page .result-abstract{font-size:13px!important}
+  .issue-page .result-identifiers{gap:10px}
+  .issue-page .result-identifiers a{margin-left:0;width:100%}
+  .issue-page .section h2{font-size:30px}
+}
