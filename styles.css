@@ -1068,3 +1068,37 @@
   .issue-page .result-rank span,.issue-page .top10-container .results-list .top-result:nth-child(-n+3) .result-rank span{font-size:20px!important}
   .issue-page .result-title{font-size:17.5px!important}
 }
+
+/* V13 — hero mobile: titolo più compatto e mai tagliato */
+@media(max-width:800px){
+  .issue-page .hero .wrap{
+    width:min(100% - 24px,1080px);
+  }
+  .issue-page .hero h1{
+    width:100%;
+    max-width:100%;
+    font-size:clamp(34px,9vw,42px);
+    line-height:1.04;
+    letter-spacing:-.025em;
+    text-wrap:balance;
+    overflow:visible;
+    word-break:normal;
+    overflow-wrap:normal;
+  }
+}
+@media(max-width:480px){
+  .issue-page .hero{
+    padding-top:30px;
+  }
+  .issue-page .hero h1{
+    font-size:clamp(33px,8.8vw,39px);
+    line-height:1.06;
+    margin-bottom:18px;
+  }
+}
+@media(max-width:360px){
+  .issue-page .hero h1{
+    font-size:31px;
+    letter-spacing:-.02em;
+  }
+}
