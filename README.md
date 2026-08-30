@@ -12,3 +12,9 @@ Versione aggiornata della newsletter di luglio 2026.
 
 ## Nota
 La ricerca V4 indicizza titolo, rivista, tipo di studio e specialità. Gli abstract PubMed non sono ancora inclusi nell’indice; possono essere aggiunti in una versione successiva per una ricerca semantica/tematica più profonda.
+
+
+## V5
+- Classifiche e risultati di ricerca in layout scientifico PubMed-like (non copia grafica).
+- Metadata PubMed: autori, rivista, data, DOI e snippet dell’abstract originale in inglese quando disponibili.
+- Ricerca sull’intero corpus AI-medico anche nel testo completo degli abstract indicizzati.

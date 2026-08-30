@@ -43,3 +43,36 @@
 .corpus-card{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 7px 22px rgba(26,39,68,.045)}
 .corpus-card-main{min-width:0}.corpus-card h3{font-size:18px;line-height:1.38;margin:8px 0 7px;letter-spacing:-.015em}.corpus-meta{margin:0;color:var(--muted);font-size:13px}.corpus-badges{display:flex;gap:7px;flex-wrap:wrap}.corpus-badge,.top10-badge{display:inline-flex;align-items:center;min-height:27px;border-radius:999px;padding:0 9px;font-size:10px;font-weight:850;letter-spacing:.035em}.corpus-badge{background:#f1f4f8;color:#5b6678}.top10-badge{background:#e8efff;color:var(--accent);border:1px solid #d6e2ff}.corpus-card-actions{display:flex;flex-direction:column;align-items:flex-end;gap:8px;min-width:150px}.corpus-more{padding:14px 6px;color:var(--muted);font-size:13px;font-weight:650;text-align:center}.topic-finder-head p{max-width:900px}
 @media(max-width:800px){.corpus-card{grid-template-columns:1fr}.corpus-card-actions{align-items:flex-start;flex-direction:row;flex-wrap:wrap;min-width:0}}
+
+
+/* V5 — risultati scientifici ispirati alla leggibilità di PubMed */
+.top10-container{margin-top:16px}
+.results-list{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 8px 28px rgba(26,39,68,.055)}
+.pub-result{display:grid;grid-template-columns:64px minmax(0,1fr);gap:20px;padding:26px 26px 25px;background:#fff;border-bottom:1px solid var(--line)}
+.pub-result:last-child{border-bottom:0}
+.pub-result:hover{background:#fbfcff}
+.result-rank{padding-top:4px;color:#697386;font-size:14px;text-align:center}
+.result-rank span{display:inline-grid;place-items:center;min-width:42px;height:42px;padding:0 8px;border:1px solid #dfe5ef;border-radius:11px;background:#fafbfc;font-weight:850;color:#465267}
+.top-result:nth-child(-n+3) .result-rank span{background:#eef3ff;border-color:#d8e3ff;color:var(--accent)}
+.result-content{min-width:0}
+.result-badges{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:7px}
+.result-badge{display:inline-flex;align-items:center;min-height:25px;padding:0 8px;border-radius:999px;font-size:10px;font-weight:850;letter-spacing:.04em}
+.top-badge{background:#eaf0ff;color:var(--accent);border:1px solid #d8e3ff}
+.corpus-badge{background:#f0f3f7;color:#667185;border:1px solid #e4e8ee}
+.result-title{font-size:21px!important;line-height:1.32!important;letter-spacing:-.02em!important;margin:0 0 7px!important;font-weight:730!important}
+.result-title a{color:#0b69b7;text-decoration:none}
+.result-title a:hover{text-decoration:underline;text-underline-offset:3px}
+.result-authors{margin:0 0 4px;color:#202938;font-size:14px;line-height:1.5}
+.result-citation{margin:0 0 5px;color:#41814e;font-size:14px;font-weight:650;line-height:1.5}
+.result-identifiers{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:0 0 10px;color:#4f7d58;font-size:13px}
+.result-identifiers a{color:#b45309;text-decoration:none;font-weight:800}.result-identifiers a:hover{text-decoration:underline}
+.result-abstract{max-width:980px;margin:7px 0 0;color:#252c38;font-size:14.5px;line-height:1.62}
+.search-rank span{background:#fff}
+.corpus-results{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 8px 28px rgba(26,39,68,.055);display:block}
+.corpus-results .pub-result{margin:0;border-radius:0;box-shadow:none}
+.corpus-more{padding:18px 24px;background:#fafbfc;border-top:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:700;text-align:center}
+.topic-finder-head p{font-size:15px}
+.topic-search{font-size:16px}
+.section-head{margin-top:6px}
+@media(max-width:800px){.pub-result{grid-template-columns:48px minmax(0,1fr);gap:14px;padding:20px 17px}.result-rank span{min-width:38px;height:38px}.result-title{font-size:18px!important}.result-authors,.result-citation,.result-abstract{font-size:13.5px}.result-identifiers{gap:10px}}
+@media(max-width:520px){.pub-result{grid-template-columns:1fr}.result-rank{text-align:left;padding:0}.result-rank span{height:32px;min-width:44px;border-radius:9px}.result-title{font-size:17.5px!important}}
