@@ -1,32 +1,14 @@
-# AI in Medicina — GitHub Pages
+# AI in Medicina — GitHub Pages V4
 
-Versione separata del sito della newsletter, costruita dai risultati finali V5.1 di luglio 2026.
+Versione aggiornata della newsletter di luglio 2026.
 
-## Pubblicazione su GitHub Pages
-1. Crea una nuova repository (es. `Newsletter-V51`).
-2. Carica **il contenuto** di questa cartella nella root della repository.
-3. In GitHub: Settings → Pages → Build and deployment → Deploy from a branch.
-4. Branch: `main`, folder: `/ (root)`, quindi Save.
-5. GitHub mostrerà l'URL pubblico del nuovo sito.
+## Novità V4
+- rimossa la barra di ricerca duplicata e il menu “Vai direttamente a una specialità” sopra il motore di ricerca;
+- il box “Cerca ciò che ti interessa” è ora l’unico punto di ricerca/navigazione;
+- la ricerca interroga 5.361 articoli AI-medici unici del mese (5.334 dal master + 27 record validi recuperati successivamente);
+- i risultati Top 10 sono segnalati con un badge dedicato;
+- quando la ricerca è attiva, le Top 10 vengono temporaneamente sostituite dai risultati del corpus mensile;
+- il dato 9.173 è descritto come “articoli valutati”, formulazione più corretta rispetto a “corpus finale”.
 
-Il sito vecchio non viene modificato.
-
-## Struttura
-- `index.html`: archivio
-- `2026-07/index.html`: numero di luglio
-- `styles.css`: grafica responsive
-- `data.json`: dati strutturati dei 300 record
-
-
-## V2
-- rimossi i punteggi V5.1 dalla visualizzazione pubblica
-- rimossa la nota sui 299 articoli unici
-- rimossa la sezione metodologica interna
-- menu a tendina per navigare tra le 30 specialità
-- ricerca per titolo, PMID o specialità mantenuta
-
-
-## V3
-- Etichetta specialità più grande.
-- Card editoriali per gli articoli, senza score pubblico.
-- Ricerca per argomento con filtro per specialità e sinonimi IT/EN.
+## Nota
+La ricerca V4 indicizza titolo, rivista, tipo di studio e specialità. Gli abstract PubMed non sono ancora inclusi nell’indice; possono essere aggiunti in una versione successiva per una ricerca semantica/tematica più profonda.
