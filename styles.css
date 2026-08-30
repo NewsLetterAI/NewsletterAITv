@@ -76,3 +76,136 @@
 .section-head{margin-top:6px}
 @media(max-width:800px){.pub-result{grid-template-columns:48px minmax(0,1fr);gap:14px;padding:20px 17px}.result-rank span{min-width:38px;height:38px}.result-title{font-size:18px!important}.result-authors,.result-citation,.result-abstract{font-size:13.5px}.result-identifiers{gap:10px}}
 @media(max-width:520px){.pub-result{grid-template-columns:1fr}.result-rank{text-align:left;padding:0}.result-rank span{height:32px;min-width:44px;border-radius:9px}.result-title{font-size:17.5px!important}}
+
+/* V6 — lista risultati con gerarchia visiva PubMed-like, basata sul riferimento fornito */
+.results-list,
+.corpus-results{
+  background:#fff;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  overflow:visible;
+  font-family:Arial,Helvetica,sans-serif;
+}
+.pub-result{
+  display:grid;
+  grid-template-columns:52px minmax(0,1fr);
+  gap:18px;
+  padding:22px 12px 25px 4px;
+  margin:0;
+  background:#fff;
+  border:0;
+  border-bottom:1px solid #e5e5e5;
+  border-radius:0;
+  box-shadow:none;
+  transition:none;
+  font-family:Arial,Helvetica,sans-serif;
+}
+.pub-result:last-child{border-bottom:0}
+.pub-result:hover{background:#fff;transform:none;box-shadow:none}
+.result-rank{
+  padding-top:2px;
+  color:#5f6368;
+  font-size:15px;
+  line-height:1.2;
+  text-align:center;
+  font-family:Arial,Helvetica,sans-serif;
+}
+.result-rank span,
+.top-result:nth-child(-n+3) .result-rank span,
+.search-rank span{
+  display:block;
+  min-width:0;
+  height:auto;
+  padding:4px 0 0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#5f6368;
+  font-size:15px;
+  font-weight:400;
+  box-shadow:none;
+}
+.result-badges{display:none!important}
+.result-content{min-width:0}
+.result-title{
+  margin:0 0 7px!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:23px!important;
+  line-height:1.28!important;
+  letter-spacing:0!important;
+  font-weight:400!important;
+}
+.result-title a{
+  color:#306fb6!important;
+  text-decoration:none;
+  font-weight:400!important;
+}
+.result-title a:hover{text-decoration:underline;text-underline-offset:2px}
+.result-authors{
+  margin:0 0 6px;
+  color:#212121!important;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16.5px!important;
+  line-height:1.42!important;
+  font-weight:400;
+}
+.result-citation{
+  margin:0 0 6px;
+  color:#597f59!important;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16.5px!important;
+  line-height:1.42!important;
+  font-weight:400!important;
+}
+.result-identifiers{
+  display:flex;
+  gap:26px;
+  flex-wrap:wrap;
+  align-items:baseline;
+  margin:0 0 10px;
+  color:#597f59!important;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px!important;
+  line-height:1.4;
+  font-weight:400;
+}
+.result-identifiers span{color:#597f59!important}
+.result-identifiers a{
+  color:#b35c22!important;
+  font-size:16px!important;
+  font-weight:700!important;
+  text-decoration:none;
+}
+.result-identifiers a:hover{text-decoration:underline}
+.result-abstract{
+  max-width:none;
+  margin:0;
+  color:#212121!important;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16.5px!important;
+  line-height:1.58!important;
+  font-weight:400;
+}
+.corpus-results .pub-result{border-radius:0;box-shadow:none}
+.corpus-more{
+  background:#fff;
+  border-top:1px solid #e5e5e5;
+  font-family:Arial,Helvetica,sans-serif;
+}
+@media(max-width:800px){
+  .pub-result{grid-template-columns:38px minmax(0,1fr);gap:12px;padding:19px 4px 21px}
+  .result-title{font-size:20px!important}
+  .result-authors,.result-citation,.result-abstract{font-size:15.5px!important}
+  .result-identifiers{font-size:15px!important;gap:14px}
+  .result-identifiers a{font-size:15px!important}
+}
+@media(max-width:520px){
+  .pub-result{grid-template-columns:30px minmax(0,1fr);gap:10px}
+  .result-rank{text-align:left}
+  .result-rank span{font-size:14px;padding-top:3px}
+  .result-title{font-size:18px!important;line-height:1.32!important}
+  .result-authors,.result-citation,.result-abstract{font-size:15px!important}
+  .result-identifiers{font-size:14.5px!important;gap:12px}
+  .result-identifiers a{font-size:14.5px!important}
+}

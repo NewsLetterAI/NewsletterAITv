@@ -18,3 +18,6 @@ La ricerca V4 indicizza titolo, rivista, tipo di studio e specialità. Gli abstr
 - Classifiche e risultati di ricerca in layout scientifico PubMed-like (non copia grafica).
 - Metadata PubMed: autori, rivista, data, DOI e snippet dell’abstract originale in inglese quando disponibili.
 - Ricerca sull’intero corpus AI-medico anche nel testo completo degli abstract indicizzati.
+
+## V6
+La lista articoli usa una gerarchia visiva PubMed-like: Arial/Helvetica, titolo blu #306FB6, citazione/PMID/DOI verdi #597F59, testo #212121, link secondario arancio #B35C22, senza card o badge decorativi.
