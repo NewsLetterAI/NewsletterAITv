@@ -21,3 +21,5 @@ La ricerca V4 indicizza titolo, rivista, tipo di studio e specialità. Gli abstr
 
 ## V6
 La lista articoli usa una gerarchia visiva PubMed-like: Arial/Helvetica, titolo blu #306FB6, citazione/PMID/DOI verdi #597F59, testo #212121, link secondario arancio #B35C22, senza card o badge decorativi.
+
+V12: area articoli resa identica alla card HTML di riferimento, incluso sfondo paper #F7F4EC.

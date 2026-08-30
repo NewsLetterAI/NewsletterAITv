@@ -921,3 +921,150 @@
   .issue-page .result-title{font-size:17.5px!important}
   .issue-page .result-identifiers a{margin-left:0!important;width:100%!important;margin-top:4px!important}
 }
+
+/* V12 — replica letterale della card di riferimento: nessun pannello bianco nell'elenco */
+.issue-page{
+  --ref-ink:#0E1B26;
+  --ref-paper:#F7F4EC;
+  --ref-paper-raised:#FFFEFA;
+  --ref-teal:#5FC2B4;
+  --ref-teal-deep:#2C6259;
+  --ref-amber:#B4842C;
+  --ref-line:#DFD9C8;
+  background:var(--ref-paper)!important;
+}
+.issue-page main,
+.issue-page .top10-container,
+.issue-page .specialty-section,
+.issue-page .results-list,
+.issue-page .corpus-results{
+  background:var(--ref-paper)!important;
+}
+.issue-page .results-list,
+.issue-page .corpus-results{
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+.issue-page .top10-container,
+.issue-page .corpus-results{
+  width:min(820px,calc(100% - 48px))!important;
+}
+.issue-page .pub-result,
+.issue-page .pub-result:hover,
+.issue-page .corpus-results .pub-result,
+.issue-page .corpus-results .pub-result:hover{
+  background:transparent!important;
+  border:0!important;
+  border-bottom:1px solid var(--ref-line)!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+.issue-page .pub-result{
+  grid-template-columns:52px minmax(0,1fr)!important;
+  gap:20px!important;
+  padding:26px 4px!important;
+}
+.issue-page .result-rank span,
+.issue-page .top10-container .results-list .top-result:nth-child(-n+3) .result-rank span{
+  color:#A9A38E!important;
+  font-family:'Source Serif 4',serif!important;
+  font-style:italic!important;
+  font-size:23px!important;
+  font-weight:500!important;
+}
+.issue-page .top-result:nth-child(-n+2) .result-rank span{color:var(--ref-amber)!important}
+.issue-page .top-badge-ref{
+  color:var(--ref-amber)!important;
+  font-family:'IBM Plex Mono',monospace!important;
+  font-size:10px!important;
+  letter-spacing:.07em!important;
+  margin-bottom:9px!important;
+  text-transform:uppercase!important;
+}
+.issue-page .result-title{
+  font-family:'Source Serif 4',serif!important;
+  font-size:19px!important;
+  line-height:1.35!important;
+  font-weight:600!important;
+  margin:0 0 10px!important;
+}
+.issue-page .result-title a{
+  color:var(--ref-ink)!important;
+  text-decoration:none!important;
+  border-bottom:1px solid transparent!important;
+}
+.issue-page .result-title a:hover{color:var(--ref-teal-deep)!important;border-bottom-color:var(--ref-teal-deep)!important}
+.issue-page .result-citation{
+  color:var(--ref-teal-deep)!important;
+  font-family:'IBM Plex Mono',monospace!important;
+  font-size:11px!important;
+  letter-spacing:.03em!important;
+  line-height:1.4!important;
+  margin:0 0 9px!important;
+  text-transform:uppercase!important;
+}
+.issue-page .result-authors{
+  color:#5B6B7A!important;
+  font-family:'IBM Plex Sans',sans-serif!important;
+  font-size:13px!important;
+  line-height:1.5!important;
+  margin:0 0 12px!important;
+  max-width:70ch!important;
+}
+.issue-page .result-abstract{
+  color:#3D4A55!important;
+  font-family:'IBM Plex Sans',sans-serif!important;
+  font-size:13.5px!important;
+  line-height:1.55!important;
+  margin:0 0 14px!important;
+  max-width:68ch!important;
+  display:-webkit-box!important;
+  -webkit-line-clamp:3!important;
+  -webkit-box-orient:vertical!important;
+  overflow:hidden!important;
+}
+.issue-page .pub-result.expanded .result-abstract{display:block!important;-webkit-line-clamp:unset!important;overflow:visible!important}
+.issue-page .abstract-toggle-ref{
+  color:var(--ref-teal-deep)!important;
+  font-family:'IBM Plex Sans',sans-serif!important;
+  font-size:12.5px!important;
+  font-weight:500!important;
+  margin:0 0 14px!important;
+}
+.issue-page .result-identifiers{
+  display:flex!important;
+  gap:9px!important;
+  align-items:center!important;
+  flex-wrap:wrap!important;
+  margin:0!important;
+}
+.issue-page .result-identifiers span{
+  background:var(--ref-paper-raised)!important;
+  border:1px solid var(--ref-line)!important;
+  color:#6B6552!important;
+  font-family:'IBM Plex Mono',monospace!important;
+  font-size:11px!important;
+  padding:4px 9px!important;
+}
+.issue-page .result-identifiers a{
+  color:var(--ref-teal-deep)!important;
+  font-family:'IBM Plex Sans',sans-serif!important;
+  font-size:12.5px!important;
+  font-weight:500!important;
+  margin-left:auto!important;
+}
+.issue-page .section-head{
+  background:var(--ref-paper)!important;
+  border-bottom:1px solid var(--ref-line)!important;
+}
+.issue-page .section h2{color:var(--ref-ink)!important}
+.issue-page .footer{background:var(--ref-paper)!important}
+@media(max-width:700px){
+  .issue-page .top10-container,.issue-page .corpus-results{width:min(100% - 28px,820px)!important}
+  .issue-page .pub-result{grid-template-columns:38px minmax(0,1fr)!important;gap:12px!important;padding:22px 0!important}
+  .issue-page .result-rank span,.issue-page .top10-container .results-list .top-result:nth-child(-n+3) .result-rank span{font-size:20px!important}
+  .issue-page .result-title{font-size:17.5px!important}
+}
