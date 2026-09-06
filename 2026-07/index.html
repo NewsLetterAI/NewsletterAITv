@@ -8,6 +8,32 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="../styles.css" rel="stylesheet"/>
+
+<style>
+.topic-search-button{
+  min-width:126px;
+  padding:12px 22px;
+  border:0;
+  border-radius:8px;
+  background:var(--teal,#5fc2b4);
+  color:var(--ink,#0e1b26);
+  font:600 14px/1 'IBM Plex Sans',sans-serif;
+  cursor:pointer;
+  transition:transform .15s ease,filter .15s ease;
+}
+.topic-search-button:hover{filter:brightness(.96)}
+.topic-search-button:active{transform:translateY(1px)}
+.clear-topic-small{
+  min-width:auto!important;
+  padding:9px 12px!important;
+  font-size:12px!important;
+}
+@media(max-width:760px){
+  .topic-search-button{width:100%}
+  .clear-topic-small{width:auto}
+}
+</style>
+
 </head>
 <body class="issue-page">
 <header class="topbar issue-topbar"><div class="wrap"><a class="brand" href="../">AI IN MEDICINA <span>· RASSEGNA MENSILE</span></a><div class="issue-meta">N. 1 · Luglio 2026</div></div></header>
@@ -15,8 +41,8 @@
 <section class="hero"><div class="wrap"><div class="hero-kicker">Rassegna mensile</div><h1>Il meglio dell’AI in medicina,<br/>specialità per specialità.</h1><p>Una selezione editoriale: 10 articoli per ciascuna delle 30 specialità.</p><div class="stats"><div class="stat"><b>10.744</b><span>articoli recuperati</span></div><div class="stat"><b>9.173</b><span>articoli valutati</span></div><div class="stat"><b>300</b><span>posizioni selezionate</span></div><div class="stat"><b>30</b><span>specialità</span></div></div><div class="pulse-line" aria-hidden="true"><span></span></div></div></section>
 <section class="wrap search-wrap"><div class="panel" id="indice"><div class="specialty-jump"><div class="eyebrow">Top 10 per specialità</div><h3>Vai direttamente alla tua specialità</h3><p>Seleziona un'area per raggiungere i 10 articoli migliori del mese.</p><select id="top10SpecialtyJump" class="specialty-jump-select" aria-label="Vai ai Top 10 di una specialità"><option value="">Seleziona una specialità…</option><option value="anatomia-patologica">Anatomia patologica</option><option value="cardiochirurgia">Cardiochirurgia</option><option value="cardiologia">Cardiologia</option><option value="chirurgia">Chirurgia</option><option value="dermatologia">Dermatologia</option><option value="direzione-medica-e-management-sanitario">Direzione medica e management sanitario</option><option value="ematologia">Ematologia</option><option value="emergenza-e-terapia-intensiva">Emergenza e terapia intensiva</option><option value="endocrinologia">Endocrinologia</option><option value="gastroenterologia">Gastroenterologia</option><option value="geriatria">Geriatria</option><option value="ginecologia">Ginecologia</option><option value="malattie-infettive">Malattie infettive</option><option value="medicina-generale">Medicina generale</option><option value="medicina-nucleare">Medicina nucleare</option><option value="medicina-riabilitativa">Medicina riabilitativa</option><option value="nefrologia-e-dialisi">Nefrologia e dialisi</option><option value="neurochirurgia">Neurochirurgia</option><option value="neurologia">Neurologia</option><option value="odontoiatria">Odontoiatria</option><option value="oftalmologia">Oftalmologia</option><option value="oncologia">Oncologia</option><option value="ortopedia-e-traumatologia">Ortopedia e traumatologia</option><option value="otorinolaringoiatria">Otorinolaringoiatria</option><option value="pneumologia">Pneumologia</option><option value="psichiatria">Psichiatria</option><option value="radiologia">Radiologia</option><option value="radioterapia-oncologica">Radioterapia oncologica</option><option value="reumatologia">Reumatologia</option><option value="urologia">Urologia</option></select></div><div class="topic-finder" id="topicFinder">
 <div class="topic-finder-head"><div><div class="eyebrow">Ricerca per argomento</div><h3>Cerca ciò che ti interessa</h3><p>Cerca nell’intero corpus AI-medico del mese: 5.361 articoli. La ricerca considera anche gli abstract PubMed in inglese.</p></div></div>
-<div class="topic-controls"><select aria-label="Limita la ricerca a una specialità" class="topic-select" id="topicSpecialty"><option value="">Tutte le specialità</option><option value="anatomia-patologica">Anatomia patologica</option><option value="cardiochirurgia">Cardiochirurgia</option><option value="cardiologia">Cardiologia</option><option value="chirurgia">Chirurgia</option><option value="dermatologia">Dermatologia</option><option value="direzione-medica-e-management-sanitario">Direzione medica e management sanitario</option><option value="ematologia">Ematologia</option><option value="emergenza-e-terapia-intensiva">Emergenza e terapia intensiva</option><option value="endocrinologia">Endocrinologia</option><option value="gastroenterologia">Gastroenterologia</option><option value="geriatria">Geriatria</option><option value="ginecologia">Ginecologia</option><option value="malattie-infettive">Malattie infettive</option><option value="medicina-generale">Medicina generale</option><option value="medicina-nucleare">Medicina nucleare</option><option value="medicina-riabilitativa">Medicina riabilitativa</option><option value="nefrologia-e-dialisi">Nefrologia e dialisi</option><option value="neurochirurgia">Neurochirurgia</option><option value="neurologia">Neurologia</option><option value="odontoiatria">Odontoiatria</option><option value="oftalmologia">Oftalmologia</option><option value="oncologia">Oncologia</option><option value="ortopedia-e-traumatologia">Ortopedia e traumatologia</option><option value="otorinolaringoiatria">Otorinolaringoiatria</option><option value="pneumologia">Pneumologia</option><option value="psichiatria">Psichiatria</option><option value="radiologia">Radiologia</option><option value="radioterapia-oncologica">Radioterapia oncologica</option><option value="reumatologia">Reumatologia</option><option value="urologia">Urologia</option></select><div class="topic-input-wrap"><span aria-hidden="true" class="topic-search-icon">⌕</span><input aria-label="Cerca un argomento" class="topic-search" id="topicSearch" placeholder="Es. lung nodule segmentation, HCC, stroke…" type="search"/></div><button class="clear-topic" id="clearTopic" type="button">Azzera</button></div>
-<div aria-live="polite" class="topic-result" id="topicResult">Scrivi un argomento oppure scegli una specialità.</div></div><div class="corpus-results hidden" id="corpusResults"></div></div></section>
+<div class="topic-controls"><select aria-label="Limita la ricerca a una specialità" class="topic-select" id="topicSpecialty"><option value="" selected disabled>Scegli la specialità di interesse…</option><option value="all">Tutte le specialità</option><option value="anatomia-patologica">Anatomia patologica</option><option value="cardiochirurgia">Cardiochirurgia</option><option value="cardiologia">Cardiologia</option><option value="chirurgia">Chirurgia</option><option value="dermatologia">Dermatologia</option><option value="direzione-medica-e-management-sanitario">Direzione medica e management sanitario</option><option value="ematologia">Ematologia</option><option value="emergenza-e-terapia-intensiva">Emergenza e terapia intensiva</option><option value="endocrinologia">Endocrinologia</option><option value="gastroenterologia">Gastroenterologia</option><option value="geriatria">Geriatria</option><option value="ginecologia">Ginecologia</option><option value="malattie-infettive">Malattie infettive</option><option value="medicina-generale">Medicina generale</option><option value="medicina-nucleare">Medicina nucleare</option><option value="medicina-riabilitativa">Medicina riabilitativa</option><option value="nefrologia-e-dialisi">Nefrologia e dialisi</option><option value="neurochirurgia">Neurochirurgia</option><option value="neurologia">Neurologia</option><option value="odontoiatria">Odontoiatria</option><option value="oftalmologia">Oftalmologia</option><option value="oncologia">Oncologia</option><option value="ortopedia-e-traumatologia">Ortopedia e traumatologia</option><option value="otorinolaringoiatria">Otorinolaringoiatria</option><option value="pneumologia">Pneumologia</option><option value="psichiatria">Psichiatria</option><option value="radiologia">Radiologia</option><option value="radioterapia-oncologica">Radioterapia oncologica</option><option value="reumatologia">Reumatologia</option><option value="urologia">Urologia</option></select><select aria-label="Filtra per tecnologia o metodo" class="topic-select" id="topicTechnology"><option value="" selected disabled>Scegli il tipo di AI / metodo…</option><option value="all">Tutti i tipi di AI / metodo</option><option value="radiomica">Radiomica</option><option value="machine-learning">Machine Learning</option><option value="deep-learning">Deep Learning</option><option value="large-language-models">Large Language Models</option><option value="generative-ai">Generative AI</option><option value="natural-language-processing">Natural Language Processing</option><option value="computer-vision">Computer Vision</option><option value="foundation-models">Foundation Models</option><option value="ai-multimodale">AI multimodale</option><option value="explainable-ai">Explainable AI</option><option value="altro">Altro / non specificato</option></select><div class="topic-input-wrap"><span aria-hidden="true" class="topic-search-icon">⌕</span><input aria-label="Cerca un argomento" class="topic-search" id="topicSearch" placeholder="Es. lung nodule segmentation, HCC, stroke…" type="search"/></div><button class="topic-search-button" id="runTopicSearch" type="button">Cerca</button><button class="clear-topic clear-topic-small" id="clearTopic" type="button">Azzera</button></div>
+<div aria-live="polite" class="topic-result" id="topicResult">Imposta i filtri o scrivi un argomento, poi premi Cerca.</div></div><div class="corpus-results hidden" id="corpusResults"></div></div></section>
 <div class="wrap top10-container" id="top10Container"><section class="section specialty-section" id="anatomia-patologica">
       <div class="section-head"><div><div class="eyebrow">Top 10 · Luglio 2026</div><h2>Anatomia patologica</h2></div><a href="#indice">↑ torna alla ricerca</a></div>
       <div class="results-list"><article class="pub-result top-result" data-specialty="anatomia patologica">
@@ -3113,6 +3139,8 @@
 <script>
 const topicSearch=document.getElementById('topicSearch');
 const topicSpecialty=document.getElementById('topicSpecialty');
+const topicTechnology=document.getElementById('topicTechnology');
+const runTopicSearch=document.getElementById('runTopicSearch');
 const clearTopic=document.getElementById('clearTopic');
 const topicResult=document.getElementById('topicResult');
 const corpusResults=document.getElementById('corpusResults');
@@ -3125,15 +3153,46 @@ function norm(s){return (s||'').toString().normalize('NFD').replace(/[\u0300-\u0
 function expandTokens(q){const raw=norm(q).split(/\s+/).filter(Boolean);return raw.map(t=>{const group=synonymGroups.find(g=>g.some(x=>norm(x)===t));return group?group.map(norm):[t];});}
 function specialtyMatches(item,slug){if(!slug)return true;const target=slug.replace(/-/g,' ');return norm(item.specialty_1)===target||norm(item.specialty_2)===target;}
 function topicMatchScore(item,q){if(!q)return 1;const groups=expandTokens(q);const title=norm(item.title), abs=norm(item.abstract), mesh=norm(item.mesh), authors=norm(item.authors), meta=norm([item.journal,item.publication_type,item.specialty_1,item.specialty_2].join(' '));let total=0;for(const terms of groups){let best=0;for(const t of terms){if(title.includes(t))best=Math.max(best,12);else if(mesh.includes(t))best=Math.max(best,8);else if(abs.includes(t))best=Math.max(best,6);else if(meta.includes(t))best=Math.max(best,4);else if(authors.includes(t))best=Math.max(best,1);}if(!best)return 0;total+=best;}if(item.top10)total+=1;return total;}
+
+const technologyRules={
+  'radiomica':['radiomic','radiomics'],
+  'machine-learning':['machine learning','xgboost','lightgbm','random forest','randomforest','support vector machine','svm','gradient boosting','catboost','lasso'],
+  'deep-learning':['deep learning','deep neural','convolutional neural','convolutional network','cnn','u-net','unet','resnet','efficientnet','vision transformer','neural network'],
+  'large-language-models':['large language model','large-language model','llm','chatgpt','gpt-','gpt4','gpt-4','gemini','claude'],
+  'generative-ai':['generative ai','generative artificial intelligence','genai','generative model','generative augmentation','generative system'],
+  'natural-language-processing':['natural language processing','nlp','text mining','clinical text','language processing','lexical model','text classification','text analysis'],
+  'computer-vision':['computer vision','image recognition','image classification','image segmentation','video segmentation','object detection','image-based artificial intelligence','image-based ai'],
+  'foundation-models':['foundation model','foundation models'],
+  'ai-multimodale':['multimodal','multi-modal','multimodality','multimodal-multitask'],
+  'explainable-ai':['explainable ai','explainable artificial intelligence','interpretable machine learning','interpretable ai','shap','saliency','explainability']
+};
+function itemTechnologyText(item){
+  return norm([item.title,item.abstract,item.mesh,item.journal,item.publication_type].filter(Boolean).join(' '));
+}
+function detectedTechnologies(item){
+  const text=itemTechnologyText(item);
+  const found=[];
+  for(const [key,terms] of Object.entries(technologyRules)){
+    if(terms.some(t=>text.includes(norm(t)))) found.push(key);
+  }
+  return found;
+}
+function technologyMatches(item,technology){
+  if(!technology)return true;
+  const found=detectedTechnologies(item);
+  if(technology==='altro')return found.length===0;
+  return found.includes(technology);
+}
+
 function escapeHtml(s){return (s||'').toString().replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
 function shortAbstract(s,n=560){const t=(s||'').replace(/\s+/g,' ').trim();if(t.length<=n)return t;let cut=t.slice(0,n);const p=Math.max(cut.lastIndexOf('. '),cut.lastIndexOf('; '));if(p>n*.62)cut=cut.slice(0,p+1);else cut=cut.replace(/[ ,;:.]+$/,'')+'…';return cut;}
 function formatAuthors(s){return (s||'').split(';').map(x=>x.trim()).filter(Boolean).join(', ');}
 function citation(item){return [item.journal,item.date,item.publication_type].filter(Boolean).join(' · ');}
 function resultHtml(item,i){const top=item.top10_specialties||[];const abst=shortAbstract(item.abstract,420);const rank=i+1;const venue=citation(item);return `<article class="pub-result corpus-result"><div class="result-rank search-rank"><span>${rank}</span></div><div class="result-content">${top.length?`<span class="top-badge-ref">TOP 10 · ${escapeHtml(top[0].specialty)} #${escapeHtml(top[0].rank)}</span>`:''}<h3 class="result-title"><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(item.pmid)}/" target="_blank" rel="noopener">${escapeHtml(item.title)}</a></h3>${venue?`<p class="result-citation">${escapeHtml(venue)}</p>`:''}${item.authors?`<p class="result-authors">${escapeHtml(formatAuthors(item.authors).split(',').slice(0,5).join(','))}${formatAuthors(item.authors).split(',').length>5?', et al.':''}</p>`:''}${abst?`<p class="result-abstract">${escapeHtml(abst)}</p>`:''}<div class="result-identifiers"><span>PMID ${escapeHtml(item.pmid)}</span>${item.doi?`<span>DOI ${escapeHtml(item.doi)}</span>`:''}<a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(item.pmid)}/" target="_blank" rel="noopener">Apri su PubMed →</a></div></div></article>`;}
-function renderResults(items,total){const max=50, shown=items.slice(0,max);corpusResults.innerHTML=shown.map(resultHtml).join('')+(total>max?`<div class="corpus-more">Mostrati i primi ${max} di ${total.toLocaleString('it-IT')} risultati. Restringi la ricerca per trovare più rapidamente ciò che ti interessa.</div>`:'');corpusResults.classList.toggle('hidden',total===0);top10Container.classList.toggle('hidden',total>0 || topicSearch.value.trim() || topicSpecialty.value);}
-function applyCorpusSearch(){const q=topicSearch.value.trim(),scope=topicSpecialty.value;if(!q&&!scope){corpusResults.classList.add('hidden');top10Container.classList.remove('hidden');topicResult.textContent='Scrivi un argomento oppure scegli una specialità.';return;}if(!corpusReady){topicResult.textContent='Sto caricando l’archivio mensile…';return;}const scored=[];for(const item of corpus){if(!specialtyMatches(item,scope))continue;const score=q?topicMatchScore(item,q):1;if(score>0)scored.push({item,score});}scored.sort((a,b)=>b.score-a.score||Number(b.item.top10)-Number(a.item.top10)||a.item.title.localeCompare(b.item.title));const matches=scored.map(x=>x.item);renderResults(matches,matches.length);topicResult.textContent=matches.length?`${matches.length.toLocaleString('it-IT')} ${matches.length===1?'articolo trovato':'articoli trovati'} nel corpus AI-medico di luglio.`:'Nessun risultato. Prova con termini più generali o con un solo concetto.';}
+function renderResults(items,total){const max=50, shown=items.slice(0,max);corpusResults.innerHTML=shown.map(resultHtml).join('')+(total>max?`<div class="corpus-more">Mostrati i primi ${max} di ${total.toLocaleString('it-IT')} risultati. Restringi la ricerca per trovare più rapidamente ciò che ti interessa.</div>`:'');corpusResults.classList.toggle('hidden',total===0);top10Container.classList.toggle('hidden',total>0 || topicSearch.value.trim() || topicSpecialty.value || topicTechnology.value);}
+function applyCorpusSearch(){const q=topicSearch.value.trim(),rawScope=topicSpecialty.value,rawTechnology=topicTechnology.value,scope=rawScope==='all'?'':rawScope,technology=rawTechnology==='all'?'':rawTechnology;if(!q&&!scope&&!technology){corpusResults.classList.add('hidden');top10Container.classList.remove('hidden');topicResult.textContent='Scrivi un argomento oppure usa i filtri per specialità e tecnologia/metodo.';return;}if(!corpusReady){topicResult.textContent='Sto caricando l’archivio mensile…';return;}const scored=[];for(const item of corpus){if(!specialtyMatches(item,scope))continue;if(!technologyMatches(item,technology))continue;const score=q?topicMatchScore(item,q):1;if(score>0)scored.push({item,score});}scored.sort((a,b)=>b.score-a.score||Number(b.item.top10)-Number(a.item.top10)||a.item.title.localeCompare(b.item.title));const matches=scored.map(x=>x.item);renderResults(matches,matches.length);topicResult.textContent=matches.length?`${matches.length.toLocaleString('it-IT')} ${matches.length===1?'articolo trovato':'articoli trovati'} nel corpus AI-medico di luglio.`:'Nessun risultato. Prova con termini più generali o con un solo concetto.';}
 fetch('../search-index.json').then(r=>{if(!r.ok)throw new Error('index');return r.json();}).then(data=>{corpus=data;corpusReady=true;applyCorpusSearch();}).catch(()=>{topicResult.textContent='Non riesco a caricare l’indice di ricerca. Ricarica la pagina tra poco.';});
-topicSearch.addEventListener('input',applyCorpusSearch);topicSpecialty.addEventListener('change',applyCorpusSearch);clearTopic.addEventListener('click',()=>{topicSearch.value='';topicSpecialty.value='';applyCorpusSearch();topicSearch.focus();});
+runTopicSearch.addEventListener('click',applyCorpusSearch);topicSearch.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();applyCorpusSearch();}});clearTopic.addEventListener('click',()=>{topicSearch.value='';topicSpecialty.selectedIndex=0;topicTechnology.selectedIndex=0;applyCorpusSearch();topicSearch.focus();});
 </script>
 <script>
 (function(){const el=document.getElementById('top10SpecialtyJump');if(!el)return;el.addEventListener('change',function(){if(!this.value)return;const target=document.getElementById(this.value);if(target){target.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+this.value);}this.selectedIndex=0;});})();
