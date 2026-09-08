@@ -8,6 +8,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="styles.css" rel="stylesheet"/>
+<style>
+/* solo piccoli aggiustamenti locali della home, senza cambiare il tema del sito */
+.issue-card-large .result-content{padding-top:2px;padding-bottom:2px}
+.issue-card-large .result-title{font-size:2rem; line-height:1.08; margin-bottom:10px}
+.issue-card-large .result-citation{font-size:0.98rem}
+.issue-card-large .result-abstract{font-size:1rem; max-width:900px}
+.issue-card-large .result-rank span{font-size:2rem}
+@media (max-width: 720px){
+  .issue-card-large .result-title{font-size:1.6rem}
+}
+</style>
 </head>
 
 <body class="issue-page">
@@ -29,7 +40,7 @@
       <div class="stat"><b>2</b><span>numeri pubblicati</span></div>
       <div class="stat"><b>30</b><span>specialità</span></div>
       <div class="stat"><b>300</b><span>Top 10 · agosto</span></div>
-      <div class="stat"><b>10.508</b><span>record valutati · agosto</span></div>
+      <div class="stat"><b>10.508</b><span>articoli recuperati</span></div>
     </div>
 
     <div class="pulse-line" aria-hidden="true"><span></span></div>
@@ -48,15 +59,14 @@
 
     <div class="results-list">
 
-      <article class="pub-result top-result">
+      <article class="pub-result top-result issue-card-large">
         <div class="result-rank"><span>II</span></div>
         <div class="result-content">
           <span class="top-badge-ref">ULTIMO NUMERO</span>
           <h3 class="result-title">
             <a href="2026-08/">Agosto 2026</a>
           </h3>
-          <p class="result-citation">N. 2 · 10.508 record valutati · 3.716 articoli eleggibili · 30 specialità</p>
-          <p class="result-abstract">Le 10 pubblicazioni più rilevanti per ciascuna specialità, selezionate con scoring V5.1 e challenger audit completo.</p>
+          <p class="result-citation">N. 2 · 10.508 articoli recuperati · 30 specialità</p>
           <div class="result-identifiers">
             <span>AGOSTO 2026</span>
             <a href="2026-08/">Apri il numero →</a>
@@ -64,14 +74,13 @@
         </div>
       </article>
 
-      <article class="pub-result top-result">
+      <article class="pub-result top-result issue-card-large">
         <div class="result-rank"><span>I</span></div>
         <div class="result-content">
           <h3 class="result-title">
             <a href="2026-07/">Luglio 2026</a>
           </h3>
-          <p class="result-citation">N. 1 · primo numero della rassegna AI in Medicina</p>
-          <p class="result-abstract">Consulta l’edizione di luglio con la stessa organizzazione per specialità e la selezione editoriale delle migliori pubblicazioni del mese.</p>
+          <p class="result-citation">N. 1 · 10.739 articoli recuperati · 30 specialità</p>
           <div class="result-identifiers">
             <span>LUGLIO 2026</span>
             <a href="2026-07/">Apri il numero →</a>
@@ -95,7 +104,7 @@
         <div class="result-rank"><span>01</span></div>
         <div class="result-content">
           <h3 class="result-title">Ricerca mensile ad alta sensibilità</h3>
-          <p class="result-abstract">Il corpus viene costruito a partire dalla letteratura PubMed del mese, usando la Create Date come riferimento temporale.</p>
+          <p class="result-abstract">Il corpus viene costruito a partire dalla letteratura PubMed del mese.</p>
         </div>
       </article>
 
@@ -111,7 +120,7 @@
         <div class="result-rank"><span>03</span></div>
         <div class="result-content">
           <h3 class="result-title">Ranking per specialità</h3>
-          <p class="result-abstract">Gli articoli eleggibili vengono valutati su 12 criteri V5.1 e sottoposti a challenger audit prima di congelare le Top 10 definitive.</p>
+          <p class="result-abstract">Gli articoli eleggibili vengono valutati e sottoposti a un audit finale prima di congelare le Top 10 definitive.</p>
         </div>
       </article>
     </div>
