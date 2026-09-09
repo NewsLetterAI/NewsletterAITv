@@ -8,7 +8,6 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
 <style>
 :root {
@@ -17,148 +16,127 @@
   --white:#ffffff;
   --muted:#66756f;
   --rule:#d8e1de;
-  --teal:#17a8a1;
-  --teal-dark:#0b817c;
-  --danger:#9b2c2c;
-  --success:#176a43;
+  --teal:#18a9a2;
+  --teal-dark:#0d817c;
 }
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body {
   min-height:100vh;
   background:
-    radial-gradient(circle at 82% 14%, rgba(23,168,161,.08), transparent 26rem),
+    radial-gradient(circle at 80% 12%, rgba(24,169,162,.07), transparent 26rem),
     var(--paper);
   color:var(--ink);
   font-family:"IBM Plex Sans",Arial,sans-serif;
 }
-.topbar{
+.wrap {
+  width:min(920px,calc(100% - 40px));
+  margin:auto;
+}
+.topbar {
   min-height:68px;
-  border-bottom:1px solid var(--rule);
-  background:rgba(255,255,255,.9);
   display:flex;
   align-items:center;
+  border-bottom:1px solid var(--rule);
+  background:rgba(255,255,255,.92);
 }
-.wrap{width:min(920px,calc(100% - 40px));margin:auto}
-.topbar .wrap{
+.topbar .wrap {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  gap:18px;
 }
-.brand{
+.brand {
   color:var(--ink);
   text-decoration:none;
-  font-weight:600;
   font-size:14px;
+  font-weight:600;
   letter-spacing:.04em;
 }
-.brand span{font-weight:400;color:var(--muted)}
-.back{
+.brand span { font-weight:400; color:var(--muted); }
+.back {
   color:var(--muted);
   text-decoration:none;
   font-size:13px;
   font-weight:500;
 }
-main{padding:86px 0 100px}
-.hero{text-align:center}
-.kicker{
-  font-family:"IBM Plex Mono",monospace;
-  text-transform:uppercase;
-  letter-spacing:.14em;
-  font-size:11px;
-  font-weight:500;
-  color:var(--teal-dark);
-  margin-bottom:18px;
+main {
+  padding:80px 0 96px;
 }
-h1{
-  margin:0 auto;
+.hero {
+  text-align:center;
+}
+.kicker {
+  margin-bottom:16px;
+  color:var(--teal-dark);
+  font:500 11px/1.2 "IBM Plex Mono",monospace;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+h1 {
   max-width:800px;
-  font-family:"Source Serif 4",Georgia,serif;
-  font-size:clamp(42px,6vw,68px);
-  line-height:1.02;
+  margin:0 auto;
+  font:700 clamp(42px,6vw,66px)/1.02 "Source Serif 4",Georgia,serif;
   letter-spacing:-.035em;
 }
-.lead{
+.lead {
   max-width:650px;
   margin:18px auto 0;
   color:var(--muted);
-  font-family:"Source Serif 4",Georgia,serif;
-  font-size:19px;
-  line-height:1.5;
+  font:400 19px/1.5 "Source Serif 4",Georgia,serif;
 }
-.signup-card{
+.signup-card {
   width:min(680px,100%);
-  margin:42px auto 0;
+  margin:38px auto 0;
   padding:34px;
   background:var(--white);
   border:1px solid var(--rule);
   border-radius:18px;
-  box-shadow:0 18px 50px rgba(15,31,42,.07);
+  box-shadow:0 18px 48px rgba(16,32,43,.07);
   text-align:left;
 }
-.signup-title{
+.signup-card h2 {
   margin:0 0 7px;
-  font-family:"Source Serif 4",Georgia,serif;
-  font-size:25px;
-  line-height:1.15;
+  font:700 27px/1.15 "Source Serif 4",Georgia,serif;
 }
-.signup-sub{
+.signup-card .sub {
   margin:0 0 22px;
   color:var(--muted);
   font-size:14px;
 }
-#sib-container{
-  max-width:none !important;
-  border:0 !important;
-  padding:0 !important;
-  background:transparent !important;
-}
-.sib-form{
-  padding:0 !important;
-  background:transparent !important;
-}
-.sib-form-container{
-  max-width:none !important;
-  margin:0 !important;
-}
-.email-row{
+.email-row {
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
   gap:10px;
-  align-items:stretch;
+  align-items:end;
 }
-.email-wrap{min-width:0}
-.email-label{
+.field label {
   display:block;
   margin:0 0 8px;
-  color:var(--ink);
   font-size:13px;
   font-weight:600;
 }
-#EMAIL{
+#EMAIL {
   width:100%;
-  min-height:54px;
+  min-height:56px;
+  padding:0 16px;
   border:1px solid #bccbc6;
   border-radius:10px;
-  padding:0 16px;
   background:#fff;
   color:var(--ink);
   outline:none;
   font:500 16px/1 "IBM Plex Sans",Arial,sans-serif;
-  transition:border-color .16s ease, box-shadow .16s ease;
 }
-#EMAIL::placeholder{color:#9aa8a3}
-#EMAIL:focus{
+#EMAIL::placeholder { color:#99a6a2; }
+#EMAIL:focus {
   border-color:var(--teal);
-  box-shadow:0 0 0 4px rgba(23,168,161,.12);
+  box-shadow:0 0 0 4px rgba(24,169,162,.12);
 }
-.subscribe-btn{
-  min-height:54px;
-  align-self:end;
+.subscribe-btn {
+  min-height:56px;
+  padding:0 26px;
   border:0;
   border-radius:10px;
-  padding:0 24px;
   background:linear-gradient(135deg,#25b9b1,#139b95);
   color:#fff;
   cursor:pointer;
@@ -167,55 +145,63 @@ h1{
   white-space:nowrap;
   box-shadow:0 9px 22px rgba(19,155,149,.18);
 }
-.subscribe-btn:hover{filter:brightness(.98)}
-.entry__error{
-  display:block;
-  margin-top:7px;
-  font-size:12px;
-  color:var(--danger);
-  background:transparent !important;
-  border:0 !important;
-  padding:0 !important;
-}
-.hint{
+.subscribe-btn:hover { filter:brightness(.98); }
+.hint {
   margin:12px 0 0;
   color:var(--muted);
   font-size:12px;
   line-height:1.5;
 }
-.privacy{
-  margin:19px 0 0;
-  padding-top:17px;
+.privacy {
+  margin:18px 0 0;
+  padding-top:16px;
   border-top:1px solid var(--rule);
   color:var(--muted);
   font-size:11.5px;
-  line-height:1.55;
+  line-height:1.5;
 }
-.privacy a{color:var(--teal-dark)}
-.sib-form-message-panel{
-  max-width:none !important;
-  margin:0 0 18px !important;
-  border-radius:10px !important;
-  font-family:"IBM Plex Sans",sans-serif !important;
+.privacy a { color:var(--teal-dark); }
+.message {
+  display:none;
+  margin:0 0 18px;
+  padding:12px 14px;
+  border-radius:10px;
+  font-size:13px;
 }
-.sib-form-message-panel__text{
-  padding:12px 14px !important;
+#error-message {
+  color:#7b1f1f;
+  background:#fff0f0;
+  border:1px solid #f0b6b6;
 }
-.input--hidden{position:absolute !important;left:-9999px !important}
-footer{
+#success-message {
+  color:#155c3c;
+  background:#eaf8f0;
+  border:1px solid #a9dfc2;
+}
+.entry__error {
+  display:block;
+  min-height:0;
+  margin-top:7px;
+  color:#8a2525;
+  font-size:12px;
+}
+.input--hidden {
+  position:absolute !important;
+  left:-9999px !important;
+}
+footer {
   border-top:1px solid var(--rule);
   padding:24px 0 36px;
   color:var(--muted);
   font-size:12px;
   text-align:center;
 }
-@media(max-width:640px){
-  main{padding:58px 0 72px}
-  .signup-card{padding:22px}
-  .email-row{grid-template-columns:1fr}
-  .subscribe-btn{width:100%;margin-top:2px}
-  .topbar .wrap{min-height:60px}
-  .brand span{display:none}
+@media(max-width:640px) {
+  main { padding:56px 0 70px; }
+  .signup-card { padding:22px; }
+  .email-row { grid-template-columns:1fr; }
+  .subscribe-btn { width:100%; }
+  .brand span { display:none; }
 }
 </style>
 </head>
@@ -232,60 +218,49 @@ footer{
   <div class="wrap hero">
     <div class="kicker">Newsletter mensile</div>
     <h1>Ricevi AI in Medicina direttamente via email.</h1>
-    <p class="lead">Inserisci il tuo indirizzo email. Ti avviseremo quando sarà disponibile un nuovo numero.</p>
+    <p class="lead">Inserisci il tuo indirizzo email e ricevi un avviso quando viene pubblicato un nuovo numero.</p>
 
     <section class="signup-card">
-      <h2 class="signup-title">Iscriviti alla newsletter</h2>
-      <p class="signup-sub">È gratuito e puoi cancellarti in qualsiasi momento.</p>
+      <h2>Iscriviti alla newsletter</h2>
+      <p class="sub">È gratuito e puoi cancellarti in qualsiasi momento.</p>
 
-      <div class="sib-form">
-        <div id="sib-form-container" class="sib-form-container">
-          <div id="error-message" class="sib-form-message-panel" style="display:none;color:#661d1d;background-color:#ffeded;border:1px solid #ffb3b3;">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <span class="sib-form-message-panel__inner-text">Non è stato possibile completare l'iscrizione. Riprova.</span>
-            </div>
-          </div>
-
-          <div id="success-message" class="sib-form-message-panel" style="display:none;color:#085229;background-color:#e7faf0;border:1px solid #9ee0bd;">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <span class="sib-form-message-panel__inner-text">Controlla la tua email per confermare l'iscrizione.</span>
-            </div>
-          </div>
-
-          <div id="sib-container" class="sib-container--large sib-container--vertical">
-            <form id="sib-form" method="POST" action="https://266c0737.sibforms.com/serve/MUIFAPLq2gytpaBQbAtRE1vqmvZT8iihNEsSfHzvUTO_O4mJAsvELcMwsFNNg585lgwjy7zkQBQn6hc6-xJz7v7CXkNVMYJnN5xkkrUeqjoq6fjQurw5hXvoe6nRYoWe9fM7whGtkzXlZ4WSSsqr8BJH5DKUJcILVb5aWohDyFZbUBvS1o2DGqMpfPg7omrK5_a3RggybYBkpxZD-w==" data-type="subscription">
-              <div class="email-row">
-                <div class="email-wrap">
-                  <label class="email-label" for="EMAIL">Indirizzo email</label>
-                  <div class="sib-input">
-                    <div class="form__entry entry_block">
-                      <div class="entry__field">
-                        <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email"
-                               placeholder="nome@esempio.it" data-required="true" required>
-                      </div>
-                      <label class="entry__error entry__error--primary"></label>
-                    </div>
-                  </div>
-                </div>
-
-                <button class="subscribe-btn sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
-                  ISCRIVITI
-                </button>
-              </div>
-
-              <p class="hint">Dopo l'invio riceverai un'email: clicca sul link per confermare definitivamente l'iscrizione.</p>
-
-              <p class="privacy">
-                Utilizziamo Brevo per gestire la mailing list. Inviando il modulo accetti che l'indirizzo email venga trasferito a Brevo per il trattamento secondo la
-                <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank" rel="nofollow noopener">Privacy Policy di Brevo</a>.
-              </p>
-
-              <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" aria-hidden="true">
-              <input type="hidden" name="locale" value="en">
-            </form>
-          </div>
-        </div>
+      <div id="error-message" class="message">
+        Non è stato possibile completare l'iscrizione. Riprova.
       </div>
+      <div id="success-message" class="message">
+        Controlla la tua email per confermare l'iscrizione.
+      </div>
+
+      <form id="sib-form" method="POST" action="https://266c0737.sibforms.com/serve/MUIFAPLq2gytpaBQbAtRE1vqmvZT8iihNEsSfHzvUTO_O4mJAsvELcMwsFNNg585lgwjy7zkQBQn6hc6-xJz7v7CXkNVMYJnN5xkkrUeqjoq6fjQurw5hXvoe6nRYoWe9fM7whGtkzXlZ4WSSsqr8BJH5DKUJcILVb5aWohDyFZbUBvS1o2DGqMpfPg7omrK5_a3RggybYBkpxZD-w==" data-type="subscription">
+        <div class="email-row">
+          <div class="field">
+            <label for="EMAIL">Indirizzo email</label>
+            <input type="email"
+                   id="EMAIL"
+                   name="EMAIL"
+                   autocomplete="email"
+                   placeholder="nome@esempio.it"
+                   data-required="true"
+                   required>
+            <label class="entry__error entry__error--primary"></label>
+          </div>
+
+          <button class="subscribe-btn sib-form-block__button sib-form-block__button-with-loader"
+                  type="submit">
+            ISCRIVITI
+          </button>
+        </div>
+
+        <p class="hint">Riceverai un'email: clicca sul link per confermare definitivamente l'iscrizione.</p>
+
+        <p class="privacy">
+          Utilizziamo Brevo per gestire la mailing list. Inviando il modulo accetti che il tuo indirizzo email venga trattato secondo la
+          <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank" rel="nofollow noopener">Privacy Policy di Brevo</a>.
+        </p>
+
+        <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" aria-hidden="true">
+        <input type="hidden" name="locale" value="en">
+      </form>
     </section>
   </div>
 </main>
