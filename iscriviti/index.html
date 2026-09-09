@@ -5,123 +5,221 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Iscriviti — AI in Medicina</title>
 <meta name="description" content="Iscriviti gratuitamente alla newsletter mensile AI in Medicina.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
 <style>
-:root{
-  --ink:#0e1b26;
-  --paper:#f5f7f6;
-  --card:#ffffff;
+:root {
+  --ink:#10202b;
+  --paper:#f6f8f7;
+  --white:#ffffff;
+  --muted:#66756f;
   --rule:#d8e1de;
-  --muted:#65736e;
-  --teal:#5fc2b4;
-  --teal-dark:#2f8e82;
+  --teal:#17a8a1;
+  --teal-dark:#0b817c;
+  --danger:#9b2c2c;
+  --success:#176a43;
 }
 *{box-sizing:border-box}
+html,body{margin:0;padding:0}
 body{
-  margin:0;
-  background:var(--paper);
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 82% 14%, rgba(23,168,161,.08), transparent 26rem),
+    var(--paper);
   color:var(--ink);
-  font:17px/1.6 "Source Serif 4",Georgia,serif;
+  font-family:"IBM Plex Sans",Arial,sans-serif;
 }
-.wrap{max-width:900px;margin:auto;padding:0 24px}
 .topbar{
-  border-bottom:1px solid var(--rule);
-  background:rgba(255,255,255,.92);
-}
-.topbar .wrap{
   min-height:68px;
+  border-bottom:1px solid var(--rule);
+  background:rgba(255,255,255,.9);
+  display:flex;
+  align-items:center;
+}
+.wrap{width:min(920px,calc(100% - 40px));margin:auto}
+.topbar .wrap{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:18px;
+  gap:20px;
 }
 .brand{
   color:var(--ink);
   text-decoration:none;
-  font:600 15px/1 "IBM Plex Sans",sans-serif;
+  font-weight:600;
+  font-size:14px;
   letter-spacing:.04em;
 }
 .brand span{font-weight:400;color:var(--muted)}
 .back{
   color:var(--muted);
   text-decoration:none;
-  font:500 13px/1 "IBM Plex Sans",sans-serif;
+  font-size:13px;
+  font-weight:500;
 }
-.hero{
-  padding:80px 0 32px;
-  text-align:center;
-}
-.eyebrow{
-  font:500 11px/1.2 "IBM Plex Mono",monospace;
-  letter-spacing:.12em;
+main{padding:86px 0 100px}
+.hero{text-align:center}
+.kicker{
+  font-family:"IBM Plex Mono",monospace;
   text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:11px;
+  font-weight:500;
   color:var(--teal-dark);
+  margin-bottom:18px;
 }
 h1{
-  margin:.3em auto .18em;
-  max-width:760px;
-  font:700 clamp(42px,7vw,68px)/.98 "Source Serif 4",Georgia,serif;
+  margin:0 auto;
+  max-width:800px;
+  font-family:"Source Serif 4",Georgia,serif;
+  font-size:clamp(42px,6vw,68px);
+  line-height:1.02;
   letter-spacing:-.035em;
 }
 .lead{
   max-width:650px;
   margin:18px auto 0;
   color:var(--muted);
+  font-family:"Source Serif 4",Georgia,serif;
   font-size:19px;
+  line-height:1.5;
 }
-.card{
-  max-width:660px;
-  margin:22px auto 72px;
-  background:var(--card);
+.signup-card{
+  width:min(680px,100%);
+  margin:42px auto 0;
+  padding:34px;
+  background:var(--white);
   border:1px solid var(--rule);
-  border-radius:16px;
-  padding:30px;
-  box-shadow:0 14px 40px rgba(14,27,38,.05);
+  border-radius:18px;
+  box-shadow:0 18px 50px rgba(15,31,42,.07);
+  text-align:left;
 }
-.benefits{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin:0 0 26px;
+.signup-title{
+  margin:0 0 7px;
+  font-family:"Source Serif 4",Georgia,serif;
+  font-size:25px;
+  line-height:1.15;
 }
-.benefit{
-  padding:16px 12px;
-  border:1px solid var(--rule);
-  border-radius:10px;
-  font:500 13px/1.35 "IBM Plex Sans",sans-serif;
-}
-.benefit b{
-  display:block;
-  font-size:18px;
-  margin-bottom:5px;
-}
-.brevo-slot{
-  margin-top:8px;
-}
-.note{
-  margin:18px auto 0;
+.signup-sub{
+  margin:0 0 22px;
   color:var(--muted);
-  font:400 12px/1.5 "IBM Plex Sans",sans-serif;
-  max-width:540px;
-  text-align:center;
+  font-size:14px;
 }
+#sib-container{
+  max-width:none !important;
+  border:0 !important;
+  padding:0 !important;
+  background:transparent !important;
+}
+.sib-form{
+  padding:0 !important;
+  background:transparent !important;
+}
+.sib-form-container{
+  max-width:none !important;
+  margin:0 !important;
+}
+.email-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:10px;
+  align-items:stretch;
+}
+.email-wrap{min-width:0}
+.email-label{
+  display:block;
+  margin:0 0 8px;
+  color:var(--ink);
+  font-size:13px;
+  font-weight:600;
+}
+#EMAIL{
+  width:100%;
+  min-height:54px;
+  border:1px solid #bccbc6;
+  border-radius:10px;
+  padding:0 16px;
+  background:#fff;
+  color:var(--ink);
+  outline:none;
+  font:500 16px/1 "IBM Plex Sans",Arial,sans-serif;
+  transition:border-color .16s ease, box-shadow .16s ease;
+}
+#EMAIL::placeholder{color:#9aa8a3}
+#EMAIL:focus{
+  border-color:var(--teal);
+  box-shadow:0 0 0 4px rgba(23,168,161,.12);
+}
+.subscribe-btn{
+  min-height:54px;
+  align-self:end;
+  border:0;
+  border-radius:10px;
+  padding:0 24px;
+  background:linear-gradient(135deg,#25b9b1,#139b95);
+  color:#fff;
+  cursor:pointer;
+  font:600 14px/1 "IBM Plex Sans",Arial,sans-serif;
+  letter-spacing:.035em;
+  white-space:nowrap;
+  box-shadow:0 9px 22px rgba(19,155,149,.18);
+}
+.subscribe-btn:hover{filter:brightness(.98)}
+.entry__error{
+  display:block;
+  margin-top:7px;
+  font-size:12px;
+  color:var(--danger);
+  background:transparent !important;
+  border:0 !important;
+  padding:0 !important;
+}
+.hint{
+  margin:12px 0 0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+.privacy{
+  margin:19px 0 0;
+  padding-top:17px;
+  border-top:1px solid var(--rule);
+  color:var(--muted);
+  font-size:11.5px;
+  line-height:1.55;
+}
+.privacy a{color:var(--teal-dark)}
+.sib-form-message-panel{
+  max-width:none !important;
+  margin:0 0 18px !important;
+  border-radius:10px !important;
+  font-family:"IBM Plex Sans",sans-serif !important;
+}
+.sib-form-message-panel__text{
+  padding:12px 14px !important;
+}
+.input--hidden{position:absolute !important;left:-9999px !important}
 footer{
   border-top:1px solid var(--rule);
-  padding:24px 0 40px;
+  padding:24px 0 36px;
   color:var(--muted);
-  font:400 12px/1.5 "IBM Plex Sans",sans-serif;
+  font-size:12px;
   text-align:center;
 }
-@media(max-width:680px){
-  .hero{padding-top:54px}
-  .benefits{grid-template-columns:1fr}
-  .card{padding:22px}
+@media(max-width:640px){
+  main{padding:58px 0 72px}
+  .signup-card{padding:22px}
+  .email-row{grid-template-columns:1fr}
+  .subscribe-btn{width:100%;margin-top:2px}
   .topbar .wrap{min-height:60px}
   .brand span{display:none}
 }
 </style>
 </head>
+
 <body>
 <header class="topbar">
   <div class="wrap">
@@ -131,29 +229,92 @@ footer{
 </header>
 
 <main>
-  <section class="hero wrap">
-    <div class="eyebrow">Newsletter mensile</div>
-    <h1>Ricevi AI in Medicina<br>direttamente via email.</h1>
-    <p class="lead">Ogni mese una selezione della nuova letteratura scientifica sull'intelligenza artificiale applicata alla medicina, organizzata per specialità.</p>
-  </section>
+  <div class="wrap hero">
+    <div class="kicker">Newsletter mensile</div>
+    <h1>Ricevi AI in Medicina direttamente via email.</h1>
+    <p class="lead">Inserisci il tuo indirizzo email. Ti avviseremo quando sarà disponibile un nuovo numero.</p>
 
-  <section class="card">
-    <div class="benefits">
-      <div class="benefit"><b>30</b>specialità mediche</div>
-      <div class="benefit"><b>Top 10</b>per ogni specialità</div>
-      <div class="benefit"><b>1 email</b>ogni nuova uscita</div>
-    </div>
+    <section class="signup-card">
+      <h2 class="signup-title">Iscriviti alla newsletter</h2>
+      <p class="signup-sub">È gratuito e puoi cancellarti in qualsiasi momento.</p>
 
-    <div class="brevo-slot">
-      <iframe width="540" height="305" src="https://266c0737.sibforms.com/v2/serve/MUIFAPLq2gytpaBQbAtRE1vqmvZT8iihNEsSfHzvUTO_O4mJAsvELcMwsFNNg585lgwjy7zkQBQn6hc6-xJz7v7CXkNVMYJnN5xkkrUeqjoq6fjQurw5hXvoe6nRYoWe9fM7whGtkzXlZ4WSSsqr8BJH5DKUJcILVb5aWohDyFZbUBvS1o2DGqMpfPg7omrK5_a3RggybYBkpxZD-w==" frameborder="0" scrolling="auto" allowfullscreen style="display:block;margin-left:auto;margin-right:auto;max-width:100%;"></iframe>
-    </div>
+      <div class="sib-form">
+        <div id="sib-form-container" class="sib-form-container">
+          <div id="error-message" class="sib-form-message-panel" style="display:none;color:#661d1d;background-color:#ffeded;border:1px solid #ffb3b3;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <span class="sib-form-message-panel__inner-text">Non è stato possibile completare l'iscrizione. Riprova.</span>
+            </div>
+          </div>
 
-    <p class="note">Iscrizione gratuita. Potrai cancellarti in qualsiasi momento. L'indirizzo email verrà utilizzato esclusivamente per l'invio della newsletter.</p>
-  </section>
+          <div id="success-message" class="sib-form-message-panel" style="display:none;color:#085229;background-color:#e7faf0;border:1px solid #9ee0bd;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <span class="sib-form-message-panel__inner-text">Controlla la tua email per confermare l'iscrizione.</span>
+            </div>
+          </div>
+
+          <div id="sib-container" class="sib-container--large sib-container--vertical">
+            <form id="sib-form" method="POST" action="https://266c0737.sibforms.com/serve/MUIFAPLq2gytpaBQbAtRE1vqmvZT8iihNEsSfHzvUTO_O4mJAsvELcMwsFNNg585lgwjy7zkQBQn6hc6-xJz7v7CXkNVMYJnN5xkkrUeqjoq6fjQurw5hXvoe6nRYoWe9fM7whGtkzXlZ4WSSsqr8BJH5DKUJcILVb5aWohDyFZbUBvS1o2DGqMpfPg7omrK5_a3RggybYBkpxZD-w==" data-type="subscription">
+              <div class="email-row">
+                <div class="email-wrap">
+                  <label class="email-label" for="EMAIL">Indirizzo email</label>
+                  <div class="sib-input">
+                    <div class="form__entry entry_block">
+                      <div class="entry__field">
+                        <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email"
+                               placeholder="nome@esempio.it" data-required="true" required>
+                      </div>
+                      <label class="entry__error entry__error--primary"></label>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="subscribe-btn sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                  ISCRIVITI
+                </button>
+              </div>
+
+              <p class="hint">Dopo l'invio riceverai un'email: clicca sul link per confermare definitivamente l'iscrizione.</p>
+
+              <p class="privacy">
+                Utilizziamo Brevo per gestire la mailing list. Inviando il modulo accetti che l'indirizzo email venga trasferito a Brevo per il trattamento secondo la
+                <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank" rel="nofollow noopener">Privacy Policy di Brevo</a>.
+              </p>
+
+              <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" aria-hidden="true">
+              <input type="hidden" name="locale" value="en">
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
 
 <footer>
   <div class="wrap">AI in Medicina · Rassegna mensile della letteratura scientifica</div>
 </footer>
+
+<script>
+window.REQUIRED_CODE_ERROR_MESSAGE = 'Seleziona un prefisso internazionale';
+window.LOCALE = 'en';
+window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE =
+  "L'indirizzo email inserito non è valido. Controllalo e riprova.";
+window.REQUIRED_ERROR_MESSAGE = "Questo campo è obbligatorio.";
+window.GENERIC_INVALID_MESSAGE =
+  "Le informazioni inserite non sono valide. Controllale e riprova.";
+window.INVALID_NUMBER = "Il valore inserito non è valido.";
+window.INVALID_DATE = "Inserisci una data valida";
+window.REQUIRED_MULTISELECT_MESSAGE = 'Seleziona almeno una voce';
+window.translation = {
+  common: {
+    selectedList: '{quantity} lista selezionata',
+    selectedLists: '{quantity} liste selezionate',
+    selectedOption: '{quantity} selezionata',
+    selectedOptions: '{quantity} selezionate'
+  }
+};
+var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
